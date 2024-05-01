@@ -14,17 +14,20 @@
     display: flex;
   }
   nav {
-    background-color: red;
     height: 100px;
   }
 
   .card-list {
-    background-color: blue;
-    height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
   }
 
   .card-shop {
-    background-color: yellow;
-    width: 25%;
+    width: 50%;
   }
 }

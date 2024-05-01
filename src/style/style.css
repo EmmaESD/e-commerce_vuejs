@@ -1,3 +1,25 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 300px;
+  background-color: green;
+}
+.card-container .card-image-price {
+  width: 100%;
+  height: 100%;
+}
+.card-container .card-bottom {
+  width: 100%;
+  height: 50px;
+  background-color: yellow;
+}
+
+i {
+  width: 50px;
+  height: 50px;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -12,14 +34,17 @@
   display: flex;
 }
 #app nav {
-  background-color: red;
   height: 100px;
 }
 #app .card-list {
-  background-color: blue;
-  height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
 }
 #app .card-shop {
-  background-color: yellow;
-  width: 25%;
+  width: 50%;
 }/*# sourceMappingURL=style.css.map */

@@ -1,9 +1,8 @@
-const { createApp, ref } = Vue;
-import { cardItem } from "./components/cardItem";
+import { cardItem } from "./components/cardItem.js";
 
-const vm = createApp({
+const vm = Vue.createApp({
   components: {
-    "card-item": cardItem,
+    cardItem: cardItem,
   },
 
   data() {
@@ -12,11 +11,17 @@ const vm = createApp({
     };
   },
 
-  mounted() {
-    fetch("data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        this.postList = data;
-      });
+  methods: {
+    showData() {
+      fetch("products.json")
+        .then((response) => response.json())
+        .then((data) => {
+          this.postList = data;
+        });
+    },
+  },
+
+  created() {
+    this.showData();
   },
 }).mount("#app");

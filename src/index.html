@@ -15,17 +15,24 @@
     <div id="app">
       <nav></nav>
       <div class="body-shop">
-        <section class="card-list">
-          <card-item
-            :price="cardItem.price"
-            :image_url="cardItem.image_url"
-            :id="cardItem.id"
-          ></card-item>
-        </section>
+        <div class="card-list">
+          <div
+            class="card-container"
+            v-bind:key="index"
+            v-for="(item, index) in postList"
+          >
+            <cardItem
+              :price="item.price"
+              :image_url="item.image_url"
+              :name="item.name"
+              :number="item.number"
+              :like="item.like"
+            ></cardItem>
+          </div>
+        </div>
         <section class="card-shop"></section>
       </div>
-
-      <script type="module" src="script.js"></script>
     </div>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
