@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+#app .body-shop {
+  display: flex;
+}
+#app nav {
+  background-color: red;
+  height: 100px;
+}
+#app .card-list {
+  background-color: blue;
+  height: 100vh;
+}
+#app .card-shop {
+  background-color: yellow;
+  width: 25%;
+}/*# sourceMappingURL=style.css.map */

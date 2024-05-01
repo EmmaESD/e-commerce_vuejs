@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>e-commerce Website</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
   <body>
     <div id="app">
       <nav></nav>
-      <section class="card-content"></section>
-      <section class="card-shop"></section>
+      <div class="body-shop">
+        <section class="card-list">
+          <card-item
+            :price="cardItem.price"
+            :image_url="cardItem.image_url"
+            :id="cardItem.id"
+          ></card-item>
+        </section>
+        <section class="card-shop"></section>
+      </div>
+
       <script type="module" src="script.js"></script>
     </div>
   </body>
