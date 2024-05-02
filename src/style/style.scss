@@ -1,0 +1,33 @@
+@import "_card-style.scss";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+
+  .body-shop {
+    display: flex;
+  }
+  nav {
+    height: 100px;
+  }
+
+  .card-list {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-shop {
+    width: 50%;
+  }
+}
