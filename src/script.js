@@ -2,7 +2,7 @@ import { cardItem } from "./components/cardItem.js";
 
 const vm = Vue.createApp({
   components: {
-    cardItem: cardItem,
+    "card-item": cardItem,
   },
 
   data() {
