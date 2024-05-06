@@ -21,13 +21,13 @@
             v-bind:key="index"
             v-for="(item, index) in postList"
           >
-            <cardItem
+            <card-item
               :price="item.price"
               :image_url="item.image_url"
               :name="item.name"
               :number="item.number"
               :like="item.like"
-            ></cardItem>
+            ></card-item>
           </div>
         </div>
         <section class="card-shop"></section>
