@@ -6,6 +6,7 @@ export const cardItem = {
     name: String,
     like: Boolean,
     number: Number,
+    id: Number,
   },
   template: `
     <div class="card-container" v-bind:key="index">
@@ -15,7 +16,7 @@ export const cardItem = {
             <div class="btn-like btn">
                 <i class="fa-regular fa-heart" style="color: #ffffff"></i>
             </div>
-            <div class="btn-shop btn" v-on:click="$emit('addshop', 3)">
+            <div class="btn-shop btn" v-on:click="$emit('addshop', id)">
                 <i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i>
             </div>
         </div>

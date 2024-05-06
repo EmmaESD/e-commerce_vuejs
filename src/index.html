@@ -20,6 +20,7 @@
             <div class="row">
               <div class="card-list col-6" v-for="(item, index) in postList">
                 <card-item
+                  :id="item.id"
                   :price="item.price"
                   :image_url="item.image_url"
                   :name="item.name"
@@ -32,6 +33,7 @@
           </div>
           <div class="col-2 shop-container" v-for="(item, id) in shopList">
             <shop-list
+              :id="item.id"
               :price="item.price"
               :image_url="item.image_url"
               :name="item.name"
