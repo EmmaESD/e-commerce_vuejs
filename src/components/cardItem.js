@@ -8,19 +8,17 @@ export const cardItem = {
     number: Number,
   },
   template: `
-        <div class="card-image-price">
-            <div class="price">
-                <h2>{{price}}</h2>
-            </div>
+    <div class="card-container" v-bind:key="index">
+            <h2 class="price">{{price}}</h2>
             <img :src="image_url" alt="" />
-        </div>
         <div class="card-bottom">
-            <div class="like-container">
+            <div class="btn-like btn">
                 <i class="fa-regular fa-heart" style="color: #ffffff"></i>
             </div>
-            <div class="shop-container">
+            <div class="btn-shop btn">
                 <i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i>
             </div>
         </div>
+    </div>
     `,
 };
