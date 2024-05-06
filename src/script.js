@@ -19,6 +19,9 @@ const vm = Vue.createApp({
           this.postList = data;
         });
     },
+    addShop(index) {
+      console.log("add to shop-list:", index);
+    },
   },
 
   created() {
