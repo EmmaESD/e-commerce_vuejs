@@ -25,11 +25,21 @@
                   :name="item.name"
                   :number="item.number"
                   :like="item.like"
+                  @addshop="addshop"
                 ></card-item>
               </div>
             </div>
           </div>
-          <div class="col-2"></div>
+          <div class="col-2 shop-container" v-for="(item, id) in shopList">
+            <shop-list
+              :price="item.price"
+              :image_url="item.image_url"
+              :name="item.name"
+              :number="item.number"
+              :like="item.like"
+            >
+            </shop-list>
+          </div>
         </div>
       </section>
     </div>

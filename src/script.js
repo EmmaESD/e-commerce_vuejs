@@ -1,13 +1,16 @@
 import { cardItem } from "./components/cardItem.js";
+import { shopList } from "./components/shopList.js";
 
 const vm = Vue.createApp({
   components: {
     "card-item": cardItem,
+    "shop-list": shopList,
   },
 
   data() {
     return {
       postList: [],
+      shopList: [],
     };
   },
 
@@ -19,8 +22,19 @@ const vm = Vue.createApp({
           this.postList = data;
         });
     },
-    addShop(index) {
-      console.log("add to shop-list:", index);
+    addshop(id) {
+      console.log("add to card", id);
+      const cardShop = this.postList.find((cardItem) => cardItem.id === id);
+      if (cardShop) {
+        this.shopList.push(cardItem);
+      } else {
+      }
+
+      console.log("shop list:", this.shopList);
+      // find item into postList where id aqual id
+
+      // cardShop[index];
+      // this.shopList.push(cardItem);
     },
   },
 
