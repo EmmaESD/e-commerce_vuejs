@@ -1,20 +1,24 @@
+//variables
+$primary-color: rgb(219, 155, 35);
+$secondary-color: rgb(16, 200, 200);
 @import "_card-style.scss";
 
+//general
 * {
-  margin: 0;
   box-sizing: border-box;
-  width: 100%;
+  margin: 0;
+}
+// Grid System
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
 }
 
-#app {
-  display: flex;
-  flex-direction: column;
-
-  .body-shop {
-    display: flex;
-  }
-  nav {
-    height: 100px;
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: calc(100% / 12 * $i - 0.5rem);
   }
 
   .card-list {
