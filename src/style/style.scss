@@ -2,6 +2,7 @@
 $primary-color: rgb(219, 155, 35);
 $secondary-color: rgb(16, 200, 200);
 @import "_card-style.scss";
+@import "_card-shop.scss";
 
 //general
 * {
@@ -29,9 +30,5 @@ $secondary-color: rgb(16, 200, 200);
     gap: 50px;
     justify-content: center;
     align-items: center;
-  }
-
-  .card-shop {
-    width: 50%;
   }
 }

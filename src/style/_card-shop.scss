@@ -1,0 +1,46 @@
+.shop-container {
+  padding: 50px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.title-price-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  h1 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 0.8rem;
+  }
+}
+.title-shop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cardshop-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-shop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: solid 2px orange;
+  img {
+    height: 50px;
+    width: 50px;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+  }
+}

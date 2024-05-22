@@ -1,10 +1,10 @@
 import { cardItem } from "./components/cardItem.js";
-import { shopList } from "./components/shopList.js";
+import { cardShop } from "./components/shopList.js";
 
 const vm = Vue.createApp({
   components: {
     "card-item": cardItem,
-    "shop-list": shopList,
+    "card-shop": cardShop,
   },
 
   data() {
@@ -22,19 +22,31 @@ const vm = Vue.createApp({
           this.postList = data;
         });
     },
+    likecard(id) {
+      this.postList[id].like = !this.postList[id].like;
+    },
     addshop(id) {
-      console.log("add to card", id);
-      const cardShop = this.postList.find((cardItem) => cardItem.id === id);
-      if (cardShop) {
-        this.shopList.push(cardItem);
-      } else {
+      this.postList[id].number++;
+      if (this.postList[id].number < 2) {
+        this.shopList.push(this.postList[id]);
       }
+    },
+    remove(id) {
+      const itemToRemove = this.shopList.find((item) => item.id === id);
+      const index = this.shopList.indexOf(itemToRemove);
+      if (index !== -1) {
+        this.shopList.splice(index, 1);
+      }
+    },
+  },
 
-      console.log("shop list:", this.shopList);
-      // find item into postList where id aqual id
-
-      // cardShop[index];
-      // this.shopList.push(cardItem);
+  computed: {
+    total() {
+      let totalAmount = 0;
+      for (let i = 0; i < this.shopList.length; i++) {
+        totalAmount += this.shopList[i].number * this.shopList[i].price;
+      }
+      return totalAmount;
     },
   },
 

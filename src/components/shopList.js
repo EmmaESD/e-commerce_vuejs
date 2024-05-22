@@ -1,16 +1,26 @@
-export const shopList = {
+export const cardShop = {
+  props: {
+    image_url: String,
+    price: Number,
+    name: String,
+    like: Boolean,
+    number: Number,
+    id: Number,
+    remove: Function,
+    name: String,
+  },
   template: `
-    <div class="card-container" v-bind:key="index">
-        <h2 class="price">{{price}}</h2>
-        <img :src="image_url" alt="" />
-    <div class="card-bottom">
-        <div class="btn-like btn">
-            <i class="fa-regular fa-heart" style="color: #ffffff"></i>
-        </div>
-        <div class="btn-shop btn" v-on:click="$emit('addshop', 3)">
-            <i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i>
-        </div>
-    </div>
+    <div class="card-shop">
+          <img :src="image_url" alt="" />
+          <div class="title-price-container">
+            <h1>{{name}}</h1>
+            <h2 class="price">{{price}}€</h2>
+          </div>
+      <div class="card-bottom">
+          <div class="remove">
+            <button @click="$emit('remove', id)"><i class="fa-solid fa-trash"></i></button>
+          </div>
+      </div>  
     </div>
   `,
 };
