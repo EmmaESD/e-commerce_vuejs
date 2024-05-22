@@ -18,18 +18,43 @@
         <div class="row">
           <div class="col-10">
             <div class="row">
-              <div class="card-list col-6" v-for="(item, index) in postList">
-                <card-item
-                  :price="item.price"
-                  :image_url="item.image_url"
-                  :name="item.name"
-                  :number="item.number"
-                  :like="item.like"
-                ></card-item>
+              <div class="card-list col-6" v-for="(item, id) in postList">
+                <div v-bind:key="id">
+                  <card-item
+                    :id="item.id"
+                    :price="item.price"
+                    :image_url="item.image_url"
+                    :name="item.name"
+                    :number="item.number"
+                    :like="item.like"
+                    @addshop="addshop"
+                    @likecard="likecard"
+                  ></card-item>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-2"></div>
+          <div class="col-2 shop-container">
+            <div class="title-shop">
+              <h1>Panier</h1>
+            </div>
+            <div class="cardshop-container">
+              <card-shop
+                v-for="(item, id) in shopList"
+                :id="item.id"
+                :price="item.price"
+                :image_url="item.image_url"
+                :name="item.name"
+                :number="item.number"
+                :like="item.like"
+                @remove="remove"
+              >
+              </card-shop>
+            </div>
+            <div class="total-shop">
+              <p>Total: {{total}}</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
